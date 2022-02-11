@@ -33,3 +33,51 @@
    33  cd 01-Container-Intro/
    34  ls
    35  history > Day1.txt 
+   36  ls
+   37  cd ..
+   38  ls
+   39  git add . ; git commit -m "Day 1" ; git push 
+   40  ls
+   41  git pull 
+   42  vim 01-Container-Intro/Day1.txt 
+   43  ls
+   44  cd ..
+   45  ls
+   46  pwd
+   47  cd 
+   48  pwd
+   49  exit 
+   50  pwd
+   51  exit 
+   52  pwd
+   53  ls
+   54  docker pull amitvashist7/myapache-benz-31-jan-2022:v1 
+   55  ls
+   56  cd docker-kubernetes-sf-11-Feb-2022/
+   57  git log 
+   58  git diff  beabb72..e77b6136
+   59  docker images 
+   60  docker pull amitvashist7/apache-ex4
+   61  docker login 
+   62  docker pull amitvashist7/apache-ex4
+   63  docker logout 
+   64  docker images 
+   65  docker rmi 5d592881faed
+   66  docker pull amitvashist7/apache-ex4
+   67  docker images 
+   68  docker rmi amitvashist7/myapache-benz-31-jan-2022:v1 
+   69  docker images 
+   70  docker ps 
+   71  docker ps -a 
+   72  docker rm 18951f860074
+   73  docker ps -a 
+   74  docker ps -a
+   75  docker ps -aq
+   76  docker rm $(docker ps -aq) 
+   77  docker ps -a 
+   78  ls
+   79  cd 01-Docker/
+   80  ls
+   81  cd 01-Container-Intro/
+   82  ls
+   83  history > Day1.txt 
