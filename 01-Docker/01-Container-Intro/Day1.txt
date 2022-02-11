@@ -1,0 +1,35 @@
+    1  ls
+    2  docker version 
+    3  systemctl status docker 
+    4  service docker status 
+    5  ls
+    6  history 
+    7  docker ps 
+    8  docker ps -a
+    9  docker container ls 
+   10  docker container ls -a 
+   11  docker images 
+   12  docker images ls 
+   13  docker images echo "Welcome to the world of Docker" 
+   14  docker run busybox echo "Welcome to the world of Docker" 
+   15  docker ps 
+   16  docker ps -a
+   17  docker images 
+   18  docker run busybox echo "Test - 1" 
+   19  docker run busybox echo "Test - 2" 
+   20  docker run busybox echo "Test - 3" 
+   21  docker run ubuntu:16.04 echo "Test - 3" 
+   22  docker ps 
+   23  docker ps -a 
+   24  docker images 
+   25  cat /etc/os-release 
+   26  docker pull centos:7
+   27  docker images 
+   28  ls
+   29  cd ..
+   30  ls
+   31  mkdir 01-Container-Intro
+   32  ls
+   33  cd 01-Container-Intro/
+   34  ls
+   35  history > Day1.txt 
