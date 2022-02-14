@@ -200,3 +200,59 @@
   200  cd 01-Container-Intro/
   201  ls
   202  history > Day2.txt 
+  203  ls
+  204  cd ..
+  205  ls
+  206  cd ..
+  207  ls
+  208  git add . ; git commit -m "01-Docker" ; git push 
+  209  docker images 
+  210  docker run -d  --name tiny-web-1 amitvashist7/k8s-tiny-web
+  211  docker ps 
+  212  docker attach tiny-web-1
+  213  docker ps 
+  214  docker start tiny-web-1
+  215  docker ps 
+  216  docker exec -it tiny-web-1 sh 
+  217  docker ps 
+  218  docker run -d  --name tiny-web-2 amitvashist7/k8s-tiny-web
+  219  docker run -d  --name tiny-web-3 amitvashist7/k8s-tiny-web
+  220  docker ps 
+  221  ls
+  222  cd 01-Docker/
+  223  ls
+  224  mkdir 02-Dockerfile
+  225  ls
+  226  cd 02-Dockerfile/
+  227  ls
+  228  mkdir apache/v1 -p 
+  229  ls
+  230  cd apache/
+  231  ls
+  232  cd v1/
+  233  ls
+  234  vim Dockerfile 
+  235  docker run -it ubuntu:16.04 
+  236  docker ps 
+  237  cat Dockerfile 
+  238  docker build -t myfisrtimage:v1 . 
+  239  docker image 
+  240  docker images
+  241  cd 
+  242  docker images 
+  243  docker run -d --name test-apache-1 myfisrtimage:v1 
+  244  docker ps 
+  245  docker run -d --name test-apache-2 myfisrtimage:v1 
+  246  docker ps 
+  247  ls
+  248  cd - 
+  249  ls
+  250  cd ..
+  251  ls
+  252  cd ..
+  253  ls
+  254  cd ..
+  255  l
+  256  cd 01-Container-Intro/
+  257  ls
+  258  history > Day2.txt 
