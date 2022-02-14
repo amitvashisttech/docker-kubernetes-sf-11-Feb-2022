@@ -256,3 +256,219 @@
   256  cd 01-Container-Intro/
   257  ls
   258  history > Day2.txt 
+  259  git add . ; git commit -m "02-DockerFile" ; git push 
+  260  ls
+  261  cd ..
+  262  ls
+  263  cd ..
+  264  ls
+  265  git add . ; git commit -m "02-DockerFile" ; git push 
+  266  ls
+  267  cd 01-Docker/02-Dockerfile/
+  268  ls
+  269  cd apache/
+  270  ls
+  271  cp -rf v1 v2 
+  272  ls
+  273  cd v2/
+  274  ls
+  275  vim Dockerfile 
+  276  ls
+  277  docker ps 
+  278  docker kill $(docker ps -qa) 
+  279  docker rm $(docker ps -qa) 
+  280  docker run -d --name test-apache-1 myfisrtimage:v1 
+  281  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  282  curl 172.17.0.2
+  283  ls
+  284  vim index.html
+  285  ls
+  286  vim Dockerfile 
+  287  ls
+  288  docker build -t myfisrtimage:v2 . 
+  289  docker images 
+  290  docker run -d --name test-apache-2 myfisrtimage:v2
+  291  docker ps 
+  292  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  293  curl 172.17.0.3
+  294  curl 172.17.0.2
+  295  curl 172.17.0.3
+  296  curl 172.17.0.2
+  297  curl 172.17.0.3
+  298  docker run -d --name test-apache-3 myfisrtimage:v2
+  299  docker run -d --name test-apache-4 myfisrtimage:v2
+  300  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  301  curl 172.17.0.3
+  302  curl 172.17.0.4
+  303  curl 172.17.0.5
+  304  docker ps 
+  305  curl -vvv 172.17.0.5
+  306  sl
+  307  ls
+  308  cd ..
+  309  ls
+  310  cd ..
+  311  ls
+  312  mkdir python-web-app
+  313  cd python-web-app/
+  314  ls
+  315  vim app.py 
+  316  vim mydockerfile
+  317  cat mydockerfile 
+  318  vim req.txt 
+  319  ls
+  320  cat app.py 
+  321  ls
+  322  cat req.txt 
+  323  ls
+  324  vim mydockerfile 
+  325  ls
+  326  vim app.py 
+  327  ls
+  328  docker build -t mypywebapp:v1 . 
+  329  docker build -t mypywebapp:v1 -f mydockerfile . 
+  330  docker images 
+  331  docker run -d mypywebapp:v1 
+  332  docker ps 
+  333  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  334* docker inspect 76e6bb774a2c
+  335  docker ps 
+  336  docker inspect 76e6bb774a2c
+  337  curl -vvv 172.17.0.5
+  338  curl -vvv 172.17.0.6
+  339  docker ps 
+  340  curl -vvv 172.17.0.6:5001
+  341  ls
+  342  vim mydockerfile 
+  343  docker build -t mypywebapp:v2 -f mydockerfile . 
+  344  docker run -d --name test-py-2 mypywebapp:v2
+  345  docker ps 
+  346  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  347  curl -vvv 172.17.0.7:8081
+  348  vim mydockerfile 
+  349  docker build -t mypywebapp:v3 -f mydockerfile . 
+  350  docker images 
+  351  docker run -d --name test-py-3 mypywebapp:v3
+  352  docker ps 
+  353  curl -vvv 172.17.0.8:8081
+  354  curl -vvv 172.17.0.8:5001
+  355  ls
+  356  cd ..
+  357  s
+  358  ls
+  359  cd apache/
+  360  s
+  361  ls
+  362  cp -rf v2 v3
+  363  ls
+  364  cd v3/
+  365  ls
+  366  vim Dockerfile 
+  367  ls
+  368  docker images 
+  369  docker build -t myfisrtimage:v3  .
+  370  docker run -d  myfisrtimage:v3
+  371  docker ps 
+  372  docker images 
+  373  docker inspect myfisrtimage:v3 
+  374  docker images 
+  375  docker inspect mypywebapp:v3 
+  376  docker history  mypywebapp:v3 
+  377  docker history myfisrtimage:v3 
+  378  docker history myfisrtimage:v2
+  379  docker history myfisrtimage:v1
+  380  ls
+  381  cd ..
+  382  ls
+  383  cd ..
+  384  ls
+  385  cd python-web-app/
+  386  ls
+  387  cat app.py 
+  388  LS
+  389  ls
+  390  cat app.py 
+  391  ls
+  392  vim mydockerfile 
+  393  ls
+  394  python app.py 
+  395  s
+  396  ls
+  397  docker images 
+  398  docker build -t mypywebapp:v4 .
+  399  docker build -t mypywebapp:v4 -f mydockerfile . 
+  400  docker images 
+  401  docker run -d  mypywebapp:v4 
+  402  docker ps 
+  403  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  404  curl 172.17.0.10:5001
+  405  curl 172.17.0.10:5001/
+  406  curl 172.17.0.10:5001/hello
+  407  curl 172.17.0.10:5001/info
+  408  docker ps 
+  409  docker login 
+  410  docker logout 
+  411  docker push mypywebapp:v4
+  412  docker login 
+  413  docker push mypywebapp:v4
+  414  docker images 
+  415  docker tag bbf304ff4b2d amitvashist7/mypython-web-app-sg-14-feb-2022
+  416  docker images 
+  417  docker push amitvashist7/mypython-web-app-sg-14-feb-2022
+  418  ls
+  419  cd ..
+  420  ls
+  421  cd ..
+  422  ls
+  423  cd 01-Container-Intro/
+  424  ls
+  425  history > Day2.txt 
+  426  ls
+  427  cd ../../
+  428  ls
+  429  docker ps 
+  430  docker network ;s 
+  431  docker network ls 
+  432  ip addr 
+  433  docker network ls 
+  434  docker network inspect 4956ff328cec
+  435  curl 172.17.0.10
+  436  curl 172.17.0.10:5001
+  437  curl localhost:5001
+  438  ls
+  439  docker ps 
+  440  netstat -tulnp 
+  441  docker run -d --name test-ntw-1 -p 8001:5001 mypywebapp:v4
+  442  docker ps 
+  443  netstat -tulnp 
+  444  systemctl status docker 
+  445  curl localhost:5001
+  446  netstat -tulnp 
+  447  curl localhost:8001
+  448  curl 172.31.0.100:8001
+  449  docker ps 
+  450  docker run -d --name test-ntw-2 -p 8001:5001 mypywebapp:v4
+  451  netstat -tulnp 
+  452  docker run -d --name test-ntw-3 -p 8002:5001 mypywebapp:v4
+  453  docker ps 
+  454  docker run -d --name test-ntw-4 -P mypywebapp:v4
+  455  docker ps 
+  456  docker run -d --name test-ntw-5 -P mypywebapp:v4
+  457  docker run -d --name test-ntw-6 -P mypywebapp:v4
+  458  docker ps 
+  459  docker run -d --name test-ntw-7 -P mypywebapp:v3
+  460  docker ps 
+  461  docker run -d --name test-ntw-8 -P myfisrtimage:v2
+  462  docker ps 
+  463  curl 172.31.0.100:32772
+  464  curl 172.31.0.100:32771
+  465  docker stop 97f42e114b3f
+  466  docker ps 
+  467  docker start 97f42e114b3f
+  468  docker ps 
+  469  ls
+  470  cd 01-Docker/
+  471  ls
+  472  cd 01-Container-Intro/
+  473  ls
+  474  history > Day2.txt 
