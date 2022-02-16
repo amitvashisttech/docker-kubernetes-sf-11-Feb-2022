@@ -1,8 +1,8 @@
 # Clean Up the stuff 
 ```
-root@master:~ # systemctl stop kubelet.service ^C
-root@master:~ # docker kill $(docker ps -qa ) ^C
-root@master:~ # docker rm $(docker ps -qa )^C
+root@master:~ # systemctl stop kubelet.service
+root@master:~ # docker kill $(docker ps -qa )
+root@master:~ # docker rm $(docker ps -qa )
 root@master:~ # rm -rf /etc/kubernetes/* /var/lib/etcd /var/lib/kubelet/*
 root@master:~ # 
 ```
@@ -11,7 +11,12 @@ root@master:~ #
 # Pull Image on Master  
 
 ```
-root@master: #
+root@master:~/docker-kubernetes-sf-11-Feb-2022/02-K8s/00-Setup# docker images | wc -l
+12
+root@master:~/docker-kubernetes-sf-11-Feb-2022/02-K8s/00-Setup#
+```
+```
+root@master: # 
 REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
 calico/kube-controllers              v3.22.0             df76d42861ee        2 weeks ago         132 MB
 calico/cni                           v3.22.0             f86797de8afd        2 weeks ago         236 MB
@@ -28,6 +33,12 @@ root@master: #
 ```
 
 # Pull Image on Worker 
+```
+root@worker2:~# docker images | wc -l
+6
+root@worker2:~#
+```
+
 ```
 root@worker2:~# 
 REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
