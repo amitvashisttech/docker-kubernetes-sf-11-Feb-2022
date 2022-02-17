@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - name: k8s-demo
+        imagePullPolicy: IfNotPresent
         image: amitvashist7/k8s-tiny-web
         ports:
         - name: node-port
